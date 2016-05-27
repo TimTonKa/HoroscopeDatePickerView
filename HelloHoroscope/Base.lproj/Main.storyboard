@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UUV-h2-Yqm">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--查詢星座-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="dhj-oH-2mU">
+                                <rect key="frame" x="0.0" y="335" width="600" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="484725906.29996097">
+                                    <!--2016-05-12 06:05:06 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="userChooseBirthday:" destination="BYZ-38-t0r" eventType="valueChanged" id="lVy-Pg-zWh"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYK-ii-RKx">
+                                <rect key="frame" x="279" y="289" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dhj-oH-2mU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="9dN-bQ-MmH"/>
+                            <constraint firstItem="qYK-ii-RKx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GzP-mB-x3j"/>
+                            <constraint firstItem="qYK-ii-RKx" firstAttribute="centerX" secondItem="dhj-oH-2mU" secondAttribute="centerX" id="Jqn-ll-wlG"/>
+                            <constraint firstItem="dhj-oH-2mU" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="wWJ-7P-ZBk"/>
+                            <constraint firstAttribute="trailing" secondItem="dhj-oH-2mU" secondAttribute="trailing" id="xDH-Wi-n3X"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="查詢星座" image="search-icon.png" id="mic-uy-A8X"/>
+                    <connections>
+                        <outlet property="label" destination="qYK-ii-RKx" id="73G-RC-Iln"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="39"/>
+        </scene>
+        <!--星座分析-->
+        <scene sceneID="vpP-Bw-oJh">
+            <objects>
+                <viewController id="EKY-oF-NZZ" customClass="CharactorViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jol-fu-KTs"/>
+                        <viewControllerLayoutGuide type="bottom" id="NcE-42-Bcw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ivq-L4-Xoo">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YWX-PS-yX9">
+                                <rect key="frame" x="0.0" y="335" width="600" height="216"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="EKY-oF-NZZ" id="8Oi-di-LCt"/>
+                                    <outlet property="delegate" destination="EKY-oF-NZZ" id="4WR-AO-Jf6"/>
+                                </connections>
+                            </pickerView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AUZ-Kj-1MS">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="190"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="Hjm-Uh-zuD"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="AUZ-Kj-1MS" secondAttribute="trailing" id="10H-qz-PT4"/>
+                            <constraint firstItem="AUZ-Kj-1MS" firstAttribute="trailing" secondItem="YWX-PS-yX9" secondAttribute="trailing" id="Ewm-AY-E8K"/>
+                            <constraint firstItem="AUZ-Kj-1MS" firstAttribute="top" secondItem="Ivq-L4-Xoo" secondAttribute="top" id="Yrv-Oa-dI9"/>
+                            <constraint firstItem="AUZ-Kj-1MS" firstAttribute="leading" secondItem="Ivq-L4-Xoo" secondAttribute="leading" id="gDt-CQ-nRh"/>
+                            <constraint firstItem="AUZ-Kj-1MS" firstAttribute="leading" secondItem="YWX-PS-yX9" secondAttribute="leading" id="khv-NI-yfI"/>
+                            <constraint firstItem="YWX-PS-yX9" firstAttribute="bottom" secondItem="NcE-42-Bcw" secondAttribute="top" id="nek-ek-yz1"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="星座分析" image="star.png" id="LGD-7j-aeM"/>
+                    <connections>
+                        <outlet property="textView" destination="AUZ-Kj-1MS" id="f4l-B2-6hb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HGT-ek-l1e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="962" y="718"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="r6T-rD-BW6">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="UUV-h2-Yqm" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="Fgr-M1-v44">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="gXJ-zq-xwh"/>
+                        <segue destination="EKY-oF-NZZ" kind="relationship" relationship="viewControllers" id="YVk-pE-fZ0"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t9u-Aj-jeb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="304"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="search-icon.png" width="25" height="25"/>
+        <image name="star.png" width="25" height="25"/>
+    </resources>
+</document>
